@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731716, g: 0.13414738, b: 0.121078566, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 440366588}
   - component: {fileID: 440366587}
   - component: {fileID: 440366590}
+  - component: {fileID: 440366591}
   m_Layer: 0
   m_Name: PoliceSpawner
   m_TagString: Untagged
@@ -423,7 +424,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   policePrefab: {fileID: 8248335973135589829, guid: 0bbadc4d03af12f41b08556a31a6d76b,
     type: 3}
-  policeSpawnInterval: 1
+  policeSpawnInterval: 3
+--- !u!114 &440366591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440366586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec537925b533fb9469e8f978c50386d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &541618958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -930,7 +943,6 @@ MonoBehaviour:
   roadPrefab: {fileID: 7524055271362277827, guid: befc13db87bf47343998d1c4db73988e,
     type: 3}
   initialRoad: {fileID: 541618959}
-  spawnInterval: 1.5
 --- !u!4 &1005553203
 Transform:
   m_ObjectHideFlags: 0
@@ -1027,9 +1039,10 @@ GameObject:
   - component: {fileID: 1169137800}
   - component: {fileID: 1169137801}
   - component: {fileID: 1169137799}
+  - component: {fileID: 1169137802}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1151,6 +1164,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1169137802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169137796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f198d006dcd6a8e49b9369299426971d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1218190393
 GameObject:
   m_ObjectHideFlags: 0

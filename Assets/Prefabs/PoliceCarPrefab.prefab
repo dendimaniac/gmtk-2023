@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4928278923911636934}
   - component: {fileID: -8683779484539162761}
   - component: {fileID: -9017784056331808767}
+  - component: {fileID: 4768026572606667541}
   m_Layer: 0
   m_Name: PoliceCarPrefab
-  m_TagString: Untagged
+  m_TagString: PoliceCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,3 +154,15 @@ MonoBehaviour:
     m_Bits: 8
   horizontalSpeed: 3
   verticalSpeed: 0.75
+--- !u!114 &4768026572606667541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248335973135589829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec537925b533fb9469e8f978c50386d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
