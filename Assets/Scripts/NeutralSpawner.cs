@@ -9,6 +9,7 @@ public class NeutralSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject neutralPrefab;
     [SerializeField] private float neutralSpawnInterval;
+    [SerializeField] private Sprite[] randomSprites;
     private float _neutralSpawnTimer;
     
     void Start()
@@ -40,6 +41,7 @@ public class NeutralSpawner : MonoBehaviour
     
     void SpawnCar(GameObject type, Vector2 randomPosition)
     {
-        Instantiate(type, randomPosition, quaternion.identity);
+        GameObject newCar = Instantiate(type, randomPosition, quaternion.identity);
+        newCar.GetComponent<SpriteRenderer>().sprite = randomSprites[Random.Range(0, randomSprites.Length)];
     }
 }
