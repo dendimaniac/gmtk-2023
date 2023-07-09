@@ -7,7 +7,8 @@ public class PlayerCarHP : BaseCarHP
 {
     private void Start()
     {
-        healthPoint = 200f;
+        maxHealthPoint = 200f;
+        currentHealthPoint = maxHealthPoint;
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -21,5 +22,7 @@ public class PlayerCarHP : BaseCarHP
         {
             takeDamage(10f);
         }
+        
+        GameUIController.Instance.UpdateHealthBar(currentHealthPoint, maxHealthPoint);
     }
 }

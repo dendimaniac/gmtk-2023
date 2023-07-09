@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BaseCarHP : MonoBehaviour
 {
-    protected float healthPoint;
+    protected float maxHealthPoint;
+    protected float currentHealthPoint;
 
     public void takeDamage(float dmg)
     {
-        healthPoint -= dmg;
-        if (healthPoint < 0)
+        currentHealthPoint -= dmg;
+        if (currentHealthPoint < 0)
         {
             Destroy(gameObject);
         }

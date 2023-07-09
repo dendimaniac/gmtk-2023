@@ -8,7 +8,8 @@ public class NeutralCarHP : BaseCarHP
     // Start is called before the first frame update
     private void Start()
     {
-        healthPoint = 1f;
+        maxHealthPoint = 1f;
+        currentHealthPoint = maxHealthPoint;
     }
 
     private void OnCollisionEnter2D(Collision2D col)
