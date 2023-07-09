@@ -9,11 +9,17 @@ public abstract class PoolManager<T> : MonoBehaviour where T : Component
 
     private readonly Queue<T> _poolQueue = new();
 
-    public virtual T Get(Vector3 position)
+    public T Get(Vector3 position)
+    {
+        var item = Get();
+        item.transform.position = position;
+        return item;
+    }
+
+    public T Get()
     {
         var item = GetItem(transform);
         ActivePool.Add(item);
-        item.transform.position = position;
         return item;
     }
 

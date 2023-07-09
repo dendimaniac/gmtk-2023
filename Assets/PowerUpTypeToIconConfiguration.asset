@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc209b64f52b48dfab0a7370eaa13155, type: 3}
+  m_Name: PowerUpTypeToIconConfiguration
+  m_EditorClassIdentifier: 
+  Icons:
+  - Type: 0
+    Icon: {fileID: 21300000, guid: 6b8ece19ebd46426b927ab2b7a07c059, type: 3}
+  - Type: 1
+    Icon: {fileID: 21300000, guid: 7dddae5d92b5146e49d72f314eeec2ee, type: 3}
+  - Type: 2
+    Icon: {fileID: 21300000, guid: 2096b10ca0c4d4175ba9ad45b58329bd, type: 3}
+  - Type: 4
+    Icon: {fileID: 21300000, guid: 6c5c1d81d03394b2983938e270603752, type: 3}
