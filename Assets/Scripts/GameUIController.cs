@@ -28,14 +28,11 @@ public class GameUIController : MonoBehaviour
     #endregion
 
     [SerializeField] public Image _healthBarSprite;
-    [SerializeField] public GameObject[] powerUps;
-
     [SerializeField] public TextMeshProUGUI timerText;
     private float _timer;
     [SerializeField] public TextMeshProUGUI policeStoppedText;
     public int _policeCarStoppedCounter;
     
-    public float powerUpTimer;
     private void Start()
     {
         _healthBarSprite.fillAmount = 1;
@@ -59,17 +56,5 @@ public class GameUIController : MonoBehaviour
     public void UpdateHealthBar(float currentHp, float maxHp)
     {
         _healthBarSprite.fillAmount = currentHp / maxHp;
-    }
-
-    public void TogglePowerUp(int powerUpNumber)
-    {
-        StartCoroutine(ITogglePowerUp(powerUps[powerUpNumber], powerUpTimer));
-    }
-
-    IEnumerator ITogglePowerUp(GameObject powerUp, float seconds)
-    {
-        powerUp.gameObject.SetActive(true);
-        yield return new WaitForSeconds(seconds);
-        powerUp.gameObject.SetActive(false);
     }
 }

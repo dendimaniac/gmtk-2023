@@ -4,6 +4,7 @@ public class SpikeTrapsPowerUp : PowerUps
 {
     [SerializeField] private SpikeTrapManager spikeTrapManager;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private float damage;
 
     public override PowerUpTypes Types => PowerUpTypes.SpikeTraps;
 
@@ -14,7 +15,7 @@ public class SpikeTrapsPowerUp : PowerUps
         base.Trigger();
         var spikeTrap = spikeTrapManager.Get();
         _offSet ??= new Vector3(0, playerMovement.BoxColliderOffset + spikeTrap.VerticalBoxColliderOffset);
-        spikeTrap.SetUp(spikeTrapManager);
+        spikeTrap.SetUp(spikeTrapManager, damage);
         spikeTrap.transform.position = playerMovement.transform.position - _offSet.Value;
     }
 }

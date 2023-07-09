@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Road : Scrollable
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    public float SpriteVerticalSize => spriteRenderer.size.y;
+
     private RoadGenerator _roadGenerator;
     
     public void SetUp(RoadGenerator roadGenerator)

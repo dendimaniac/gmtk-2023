@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2721171691343517143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 15.4237, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81,9 +81,9 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 21.5, y: 16.5}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_Size: {x: 21.75, y: 16.5}
+  m_AdaptiveModeThreshold: 1
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -126,10 +126,10 @@ BoxCollider2D:
     border: {x: 6.94, y: 6.19, z: 6.87, w: 6.33}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 17.77, y: 16.52}
-    newSize: {x: 21.5, y: 16.5}
-    adaptiveTilingThreshold: 0.5
+    newSize: {x: 21.75, y: 16.5}
+    adaptiveTilingThreshold: 1
     drawMode: 2
-    adaptiveTiling: 0
+    adaptiveTiling: 1
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
@@ -147,3 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 10
+  spriteRenderer: {fileID: 6321447286147394684, guid: 1f2c49d44e95f7346b7fb0b9d4cca1c3,
+    type: 3}

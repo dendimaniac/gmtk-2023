@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 10
+  spriteRenderer: {fileID: 6321447286147394684}
