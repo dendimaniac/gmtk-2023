@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -39,6 +40,8 @@ public class GameUIController : MonoBehaviour
         _timer = 0f;
         _policeCarStoppedCounter = 0;
         UpdatePoliceCarStopped(_policeCarStoppedCounter);
+        
+        SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
     }
 
     private void Update()

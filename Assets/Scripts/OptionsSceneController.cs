@@ -20,6 +20,7 @@ public class OptionsSceneController : MonoBehaviour
     public void Start()
     {
         LoadSound();
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Options"));
     }
 
     public void SetMasterVolume (float sliderValue)
@@ -44,7 +45,8 @@ public class OptionsSceneController : MonoBehaviour
         PlayerPrefs.SetFloat(MusicVolKey, musicSlider.value);
         PlayerPrefs.Save();
 
-        SceneManager.LoadScene("Menu");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
     }
 
     public void ResetToDefault()

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseCarHP : MonoBehaviour
@@ -12,11 +9,15 @@ public class BaseCarHP : MonoBehaviour
     public void takeDamage(float dmg)
     {
         currentHealthPoint -= dmg;
-        SoundManager.Instance.PlaySound("Crash_metal1");
         if (currentHealthPoint < 0)
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            SoundManager.Instance.PlaySound("Explosion2");
             Destroy(gameObject);
+        }
+        else
+        {
+            SoundManager.Instance.PlaySound("Crash_metal1");
         }
     }
 }

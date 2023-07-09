@@ -3,15 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class MenuSceneController : MonoBehaviour
 {
+    private void Start()
+    {
+        if (!SceneManager.GetSceneByName("Audio").isLoaded) SceneManager.LoadScene("Audio", LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Menu"));
+    }
+
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene(0, LoadSceneMode.Additive);
     }
 
     public void OpenOptions()
     {
-        SceneManager.LoadScene("Options");
-    }
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene("Options", LoadSceneMode.Additive);
+        }
 
     public void Quit()
     {
