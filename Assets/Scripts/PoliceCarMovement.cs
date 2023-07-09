@@ -47,8 +47,12 @@ public class PoliceCarMovement : MonoBehaviour
         }
         else
         {
-            float distanceApart = FindObjectOfType<RobberMovement>().transform.position.x - transform.position.x;
-            moveX = 0.1f*distanceApart;
+            var robber = FindObjectOfType<RobberMovement>();
+            if (robber != null)
+            {
+                float distanceApart = robber.transform.position.x - transform.position.x;
+                moveX = 0.1f*distanceApart;
+            }
         }
 
         var movement = Time.deltaTime * (horizontalSpeed * new Vector3(moveX, 0, 0f).normalized + verticalSpeed * Vector3.up);
