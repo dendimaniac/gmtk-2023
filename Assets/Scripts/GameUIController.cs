@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameUIController : MonoBehaviour
@@ -34,10 +31,7 @@ public class GameUIController : MonoBehaviour
     public int _policeCarStoppedCounter;
     
     public GameOverCanvas gameOverCanvas;
-    
-    public float powerUpTimer;
-    
-    
+
     private void Start()
     {
         Time.timeScale = 1;
