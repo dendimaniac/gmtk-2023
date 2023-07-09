@@ -24,6 +24,7 @@ public class PoliceSpawner : MonoBehaviour
         if (_policeSpawnTimer > policeSpawnInterval)
         {
             SpawnCar(policePrefab, GetRandomPosition());
+            SoundManager.Instance.GetRandomPoliceSpawnSound();
             _policeSpawnTimer = 0f;
         }
     }
