@@ -12,7 +12,7 @@ public class MenuSceneController : MonoBehaviour
     public void StartGame()
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        SceneManager.LoadScene(0, LoadSceneMode.Additive);
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
     }
 
     public void OpenOptions()

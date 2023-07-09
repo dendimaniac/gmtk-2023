@@ -42,7 +42,7 @@ public class GameUIController : MonoBehaviour
         _policeCarStoppedCounter = 0;
         UpdatePoliceCarStopped(_policeCarStoppedCounter);
         
-        SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
+        SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
     }
 
     private void Update()
