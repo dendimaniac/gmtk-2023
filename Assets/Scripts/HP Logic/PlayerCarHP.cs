@@ -25,4 +25,9 @@ public class PlayerCarHP : BaseCarHP
         
         GameUIController.Instance.UpdateHealthBar(currentHealthPoint, maxHealthPoint);
     }
+
+    public void OnDestroy()
+    {
+        GameUIController.Instance.GameOver();
+    }
 }
