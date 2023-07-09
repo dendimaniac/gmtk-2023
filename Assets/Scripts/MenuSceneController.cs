@@ -19,7 +19,13 @@ public class MenuSceneController : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene("Options", LoadSceneMode.Additive);
-        }
+    }
+    
+    public void OpenCredits()
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
+    }
 
     public void Quit()
     {
