@@ -11,9 +11,10 @@ public class SpikeWheel : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var policeCar = other.gameObject.GetComponent<PoliceCarHP>();
-        if (!policeCar) return;
+        var baseCar = other.gameObject.GetComponent<BaseCarHP>();
+        if (!baseCar) return;
+        if (baseCar is RobberCarHP) return;
 
-        policeCar.takeDamage(_damage);
+        baseCar.takeDamage(_damage);
     }
 }
