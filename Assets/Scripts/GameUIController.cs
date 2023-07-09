@@ -11,9 +11,8 @@ public class GameUIController : MonoBehaviour
     #region Singleton
 
     public static GameUIController Instance; 
-    private void Awake() 
-    { 
-        // If there is an instance, and it's not me, delete myself.
+    private void Awake()
+    {
         
         if (Instance != null && Instance != this) 
         { 
@@ -35,9 +34,16 @@ public class GameUIController : MonoBehaviour
     [SerializeField] public TextMeshProUGUI policeStoppedText;
     public int _policeCarStoppedCounter;
     
+    public GameOverCanvas gameOverCanvas;
+    
     public float powerUpTimer;
+    
+    
     private void Start()
     {
+        Time.timeScale = 1;
+        gameOverCanvas.gameObject.SetActive(false);
+        
         _healthBarSprite.fillAmount = 1;
         _timer = 0f;
         _policeCarStoppedCounter = 0;
@@ -71,5 +77,13 @@ public class GameUIController : MonoBehaviour
         powerUp.gameObject.SetActive(true);
         yield return new WaitForSeconds(seconds);
         powerUp.gameObject.SetActive(false);
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        gameOverCanvas.timeText.text = $"Time sabotaged: {timerText.text}";
+        gameOverCanvas.crashCountText.text = $"Police car crashed: {_policeCarStoppedCounter.ToString()}";
+        gameOverCanvas.gameObject.SetActive(true);
     }
 }
