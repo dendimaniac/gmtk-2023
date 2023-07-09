@@ -10,6 +10,7 @@ public class BaseCarHP : MonoBehaviour
     public void takeDamage(float dmg)
     {
         currentHealthPoint -= dmg;
+        SoundManager.Instance.PlaySound("Crash_metal1");
         if (currentHealthPoint < 0)
         {
             Destroy(gameObject);

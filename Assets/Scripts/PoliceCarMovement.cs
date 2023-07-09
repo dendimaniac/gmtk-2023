@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PoliceCarMovement : MonoBehaviour
@@ -7,6 +8,7 @@ public class PoliceCarMovement : MonoBehaviour
     [SerializeField] private float horizontalSpeed = 7f;
     [SerializeField] private float verticalSpeed = 10f;
     private float rayLength = 5f;
+
     private void Update()
     {
         var size = boxCollider.size;
@@ -45,9 +47,10 @@ public class PoliceCarMovement : MonoBehaviour
         }
         else
         {
-            moveX = FindObjectOfType<RobberMovement>().transform.position.x > transform.position.x ? +0.01f : -0.01f;
+            float distanceApart = FindObjectOfType<RobberMovement>().transform.position.x - transform.position.x;
+            moveX = 0.1f*distanceApart;
         }
-        
+
         var movement = Time.deltaTime * (horizontalSpeed * new Vector3(moveX, 0, 0f).normalized + verticalSpeed * Vector3.up);
         transform.position += movement;
     }
