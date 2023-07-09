@@ -19,4 +19,10 @@ public class PoliceCarHP : BaseCarHP
         takeDamage(10f);
         _healthBarSprite.fillAmount = currentHealthPoint / maxHealthPoint;
     }
+
+    private void OnDestroy()
+    {
+        GameUIController.Instance._policeCarStoppedCounter++;
+        GameUIController.Instance.UpdatePoliceCarStopped(GameUIController.Instance._policeCarStoppedCounter);
+    }
 }

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameUIController : MonoBehaviour
@@ -27,14 +29,33 @@ public class GameUIController : MonoBehaviour
 
     [SerializeField] public Image _healthBarSprite;
     [SerializeField] public GameObject[] powerUps;
+
+    [SerializeField] public TextMeshProUGUI timerText;
+    private float _timer;
+    [SerializeField] public TextMeshProUGUI policeStoppedText;
+    public int _policeCarStoppedCounter;
+    
     public float powerUpTimer;
     private void Start()
     {
         _healthBarSprite.fillAmount = 1;
-        //test for powerup2
-        TogglePowerUp(2);
+        _timer = 0f;
+        _policeCarStoppedCounter = 0;
+        UpdatePoliceCarStopped(_policeCarStoppedCounter);
     }
 
+    private void Update()
+    {
+        _timer += Time.deltaTime;
+        TimeSpan time = TimeSpan.FromSeconds(_timer);
+        timerText.text = time.ToString(@"mm\:ss");
+    }
+
+    public void UpdatePoliceCarStopped(int count)
+    {
+        policeStoppedText.text = $"Police stopped: {count}";
+    }
+    
     public void UpdateHealthBar(float currentHp, float maxHp)
     {
         _healthBarSprite.fillAmount = currentHp / maxHp;
