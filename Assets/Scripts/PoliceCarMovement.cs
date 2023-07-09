@@ -43,6 +43,10 @@ public class PoliceCarMovement : MonoBehaviour
         {
             moveX = -1;
         }
+        else
+        {
+            moveX = FindObjectOfType<RobberMovement>().transform.position.x > transform.position.x ? +0.01f : -0.01f;
+        }
         
         var movement = Time.deltaTime * (horizontalSpeed * new Vector3(moveX, 0, 0f).normalized + verticalSpeed * Vector3.up);
         transform.position += movement;

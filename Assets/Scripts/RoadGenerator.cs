@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RoadGenerator : MonoBehaviour
 {
     [SerializeField] private Road roadPrefab;
     [SerializeField] private Road initialRoad;
-
+    [SerializeField] private Road intersectionPrefab;
+    
     private float _timer;
     private Transform _latestRoad;
 
@@ -27,7 +29,8 @@ public class RoadGenerator : MonoBehaviour
 
     public void SpawnRoadPrefab()
     {
-        var road = Instantiate(roadPrefab, transform);
+        //10% to spawn intersection instead of a normal road
+        var road = Random.value < 0.1f ? Instantiate(intersectionPrefab, transform) : Instantiate(roadPrefab, transform);
         road.SetUp(this);
         road.transform.position = _latestRoad.transform.position + new Vector3(0, 10, 0);
         _latestRoad = road.transform;
