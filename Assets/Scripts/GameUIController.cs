@@ -8,20 +8,20 @@ public class GameUIController : MonoBehaviour
 {
     #region Singleton
 
-        public static GameUIController Instance; 
-        private void Awake() 
-        { 
-            // If there is an instance, and it's not me, delete myself.
+    public static GameUIController Instance; 
+    private void Awake() 
+    { 
+        // If there is an instance, and it's not me, delete myself.
         
-            if (Instance != null && Instance != this) 
-            { 
-                Destroy(this); 
-            } 
-            else 
-            { 
-                Instance = this; 
-            } 
-        }
+        if (Instance != null && Instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            Instance = this; 
+        } 
+    }
 
     #endregion
 
